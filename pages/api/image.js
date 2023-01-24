@@ -58,10 +58,10 @@ export default async function (req, res) {
 
 function generatePrompt(image) {
 
-  return `  ${image} high resolution image render cgi Elegant beautifully rendered aesthetic expression of the Sublime by Android Jones, salvador dali, Shepard Fairey, Josephine Wall, Carlo Crivelli, Scott Naismith, Sandra Chevrier, Giotto Di Bondone. high resolution, digital art, fantasy, highly intricate details. 
+  return `  ${image} high resolution image render cgi Elegant beautifully rendered aesthetic expression of the Sublime by Android Jones,  Shepard Fairey, Josephine Wall, Carlo Crivelli, Scott Naismith, Sandra Chevrier, Giotto Di Bondone. high resolution, digital art, fantasy, highly intricate details. 
   Perfect composition subtractive lighting, 
 cosmic, mystical, psychedelic vivid dark colors, neon glow; dark sci-fi concept art, intricate hyperdetailed; professional quality, epic, cinematic
-  hyperrealistic 16k Octane render wide angle design magazine photography, medieval masterwork
+  hyperrealistic 16k Octane render wide angle design magazine photography, medieval masterwork, hyperdetailed matte painting :: perfect proportions
    `;
 }
 

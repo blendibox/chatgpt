@@ -89,7 +89,7 @@ export default function Image() {
           <input type="submit" value={botaoEnviar || 'Enviar'} id="enviar" />
         </form>
         <div  className={styles.result}>
-          <a href="/chat">Converse com a IA</a> | <a href="https:\\www.blendibox.com.br">Loja Blendibox</a>
+          <a href="/chat" className={styles.botaoLink}>Converse com a IA</a> | <a className={styles.botaoLink} href="https:\\www.blendibox.com.br">Loja Blendibox</a>
         </div>
 
          <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> Nada do que for dito por ela corresponde a um compromisso da Empresa. 

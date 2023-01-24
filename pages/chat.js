@@ -70,7 +70,7 @@ export default function Home() {
           <input type="submit"  value={botaoEnviar || 'Enviar'} id="enviar" />
         </form>
         <div  className={styles.result}>
-          <a href="/image">Crie uma imagem</a> | <a href="https:\\www.blendibox.com.br">Loja Blendibox</a>
+          <a href="/image" className={styles.botaoLink}>Crie uma imagem</a> | <a className={styles.botaoLink} href="https:\\www.blendibox.com.br">Loja Blendibox</a>
         </div>
        
        <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> 

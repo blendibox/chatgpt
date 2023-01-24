@@ -68,11 +68,21 @@
 .main input[type="submit"] {
   padding: 12px 0;
   color: #fff;
-  background-color: #10a37f;
+  background-color: #1270a7;
   border: none;
   border-radius: 4px;
   text-align: center;
   cursor: pointer;
+}
+
+.main .botaoLink{
+    padding: 12px 0;
+    color: #1270a7;
+    border-radius: 4px;
+    border: 1px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
 }
 .main .result {
   margin-top: 2px;
@@ -81,6 +91,7 @@
 }
 
 .main .image{
-  max-width: 160px;
+  max-width: 150px;
+  margin-left: 8px;
 
 }
