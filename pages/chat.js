@@ -5,10 +5,11 @@ import styles from "./index.module.css";
 export default function Home() {
   const [chatInput, setChatInput] = useState("");
   const [result, setResult] = useState();
+  const [botaoEnviar, setbotaoEnviar] = useState();
 
   async function onSubmit(event) {
     event.preventDefault();
-
+    setbotaoEnviar('Processando... Aguarde');
 
 
     try {
@@ -17,7 +18,7 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ chat: chatInput  }),
+        body: JSON.stringify({ chat: 'IA: ' + chatInput  }),
       });
 
       const data = await response.json();
@@ -25,12 +26,15 @@ export default function Home() {
         throw data.error || new Error(`Request failed with status ${response.status}`);
       }
 
+      setbotaoEnviar('Enviar');
       setResult(data.result);
       setChatInput("");
     } catch(error) {
       // Consider implementing your own error handling logic here
       console.error(error);
-      alert(error.message);
+      setbotaoEnviar('Enviar');
+      setResult(error.message);
+     // alert(error.message);
     }
 
 
@@ -50,22 +54,31 @@ export default function Home() {
       <main className={styles.main}>
         <img src="/dog.png" className={styles.icon} />
         <h3>IA  Blendibox</h3>
-        <h2>  (ChatGPT) </h2>
-
+        <h4>  (ChatGPT) </h4>
 
         <div className={styles.result}>{result}</div>
          <br/>
+
         <form onSubmit={onSubmit}>
           <textarea
             name="chat"
-            rows="10"
-            placeholder="Digite sua pergunta"
+            rows="6"
+            placeholder="Humano: Digite sua pergunta sobre um produto da Loja Blendibox"
             value={chatInput}
             onChange={(e) => setChatInput(e.target.value)}
           />
-          <input type="submit" value="Enviar" />
+          <input type="submit"  value={botaoEnviar || 'Enviar'} id="enviar" />
         </form>
+        <div  className={styles.result}>
+          <a href="/image">Crie uma imagem</a> | <a href="https:\\www.blendibox.com.br">Loja Blendibox</a>
+        </div>
        
+       <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> 
+       Nada do que for dito por ela corresponde a um compromisso da Empresa. 
+      <br/> Lembre-se: Ela foi programada para vender a você, então, vai usar de recursos "não humanos" para isso. <br/> 
+       Não leve a sério nada do que ela te disser! 
+       </small>
+
       </main>
     </div>
   );

@@ -19,7 +19,7 @@ export default async function (req, res) {
   if (chat.trim().length === 0) {
     res.status(400).json({
       error: {
-        message: "Não entendi sua pergunta...",
+        message: "IA: Não entendi sua pergunta...",
       }
     });
     return;
@@ -33,14 +33,14 @@ export default async function (req, res) {
       model: "text-davinci-003",
       prompt: generatePrompt(chat),
       temperature: 0.9,
-      max_tokens: 150,
+      max_tokens: 1097,
       top_p: 1,
       frequency_penalty: 0,
       presence_penalty: 0.6,
       stop: [" Human:", " AI:"],
     });
-       console.log(completion.data);
-     res.status(200).json({ result: completion.data.choices[0].text, name: " IA" });
+       //console.log(completion.data);
+     res.status(200).json({ result: completion.data.choices[0].text });
 
   } catch(error) {
     // Consider adjusting the error handling logic for your use case
@@ -63,8 +63,12 @@ export default async function (req, res) {
 
 function generatePrompt(chat) {
 
-  return `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. \n
-   ${chat}
+  return `The following is a conversation with an AI assistant. The assistant is helpful, creative, clever, and very friendly. \n\n
+  Humano: ${chat} \n
+  IA: Em que posso ajudar \n
+  Humano: Quero que você atue como um vendedor, e como bajulador. faça com que o que você está tentando vender pareça mais valioso do que realmente é e me convença a comprar, usando uma linguagem informal e divertida \n
+  IA:
+   
 
    `;
 }

@@ -17,6 +17,7 @@
 .main input {
   font-size: 16px;
   line-height: 24px;
+  text-align: center;
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
@@ -48,10 +49,22 @@
   margin-bottom: 24px;
   outline-color: #10a37f;
 }
+.main textarea{
+  margin-bottom: 2px;
+  border-color: #ffffff;
+  text-align: left;
+}
+
 .main ::placeholder {
   color: #8e8ea0;
   opacity: 1;
 }
+.main small{
+ font-size:  0.7em;
+  line-height: 20px;
+  color: #353740;
+}
+
 .main input[type="submit"] {
   padding: 12px 0;
   color: #fff;
@@ -62,10 +75,9 @@
   cursor: pointer;
 }
 .main .result {
-  font-weight: bold;
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 2px;
   max-width: 320px;
+  text-align: left;
 }
 
 .main .image{
