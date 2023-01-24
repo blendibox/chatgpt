@@ -40,18 +40,27 @@ export default function Home() {
 
       <main className={styles.main}>
         <img src="/dog.png" className={styles.icon} />
-        <h3>Name my pet</h3>
-        <form onSubmit={onSubmit}>
-          <input
-            type="text"
-            name="animal"
-            placeholder="Enter an animal"
-            value={animalInput}
-            onChange={(e) => setAnimalInput(e.target.value)}
-          />
-          <input type="submit" value="Generate names" />
-        </form>
-        <div className={styles.result}>{result}</div>
+        <h3>IA Blendibox</h3>
+
+         <div className={styles.result}>
+         IA: Olá! Meu nome é AI Assistant e estou aqui para ajudar você a encontrar exatamente o que precisa.<br/> IA: Por trás desta há uma equipe dedicada de profissionais que se esforçam para garantir que tudo funcione sem problemas. Vamos começar?
+         </div>
+
+         <div  className={styles.result}>
+          <br/> 
+          <a href="/chat" className={styles.botaoLink}>Conversar com a IA</a> 
+          <br/> <br/>
+            <a href="/image" className={styles.botaoLink}>Gerar nova imagem </a> 
+          <br/> <br/>
+          <a className={styles.botaoLink} href="https:\\www.blendibox.com.br">Loja Blendibox</a>
+           <br/> <br/>
+        </div>
+
+      
+        <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> Nada do que for dito por ela corresponde a um compromisso da Empresa. 
+       <br/> Lembre-se: Ela foi programada para vender a você, então, vai usar de recursos "não humanos" para isso. <br/> 
+       Não leve a sério nada do que ela te disser! 
+       </small>
       </main>
     </div>
   );
