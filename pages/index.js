@@ -55,12 +55,6 @@ export default function Home() {
           <a className={styles.botaoLink} href="https:\\www.blendibox.com.br">Loja Blendibox</a>
            <br/> <br/>
         </div>
-
-      
-        <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> Nada do que for dito por ela corresponde a um compromisso da Empresa. 
-       <br/> Lembre-se: Ela foi programada para vender a você, então, vai usar de recursos "não humanos" para isso. <br/> 
-       Não leve a sério nada do que ela te disser! 
-       </small>
       </main>
     </div>
   );

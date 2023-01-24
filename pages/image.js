@@ -72,10 +72,10 @@ export default function Image() {
         <h4>(crie sua imagem com chatGPT)</h4>
 
         <div className={styles.result}>
-           <a href={image1} targer="_blank" ><img src={image1} className={styles.image}/></a>
-           <a href={image2} targer="_blank" ><img src={image2} className={styles.image}/></a>
-           <a href={image3} targer="_blank" ><img src={image3} className={styles.image}/></a>
-           <a href={image4} targer="_blank" ><img src={image4} className={styles.image}/></a>
+           <a href={image1 } download><img src={image1 || 'gato_sapato_vermelho.png'} className={styles.image}/></a>
+           <a href={image2 } download ><img src={image2 || 'misterio_wendy.png'} className={styles.image}/></a>
+           <a href={image3 } download ><img src={image3 || 'sansao_aquarela.png'} className={styles.image}/></a>
+           <a href={image4 } download ><img src={image4 || 'darth_vader.png'} className={styles.image}/></a>
         </div>
          <br/>
         <form onSubmit={onSubmit}>
@@ -91,11 +91,6 @@ export default function Image() {
         <div  className={styles.result}>
           <a href="/chat" className={styles.botaoLink}>Converse com a IA</a> | <a className={styles.botaoLink} href="https:\\www.blendibox.com.br">Loja Blendibox</a>
         </div>
-
-         <small> <br/> <b>Aviso Importante:</b> <br/> As informações passadas pela IA é apenas para entretenimento. <br/> Nada do que for dito por ela corresponde a um compromisso da Empresa. 
-       <br/> Lembre-se: Ela foi programada para vender a você, então, vai usar de recursos "não humanos" para isso. <br/> 
-       Não leve a sério nada do que ela te disser! 
-       </small>
        
       </main>
     </div>
