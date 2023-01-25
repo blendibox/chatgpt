@@ -21,6 +21,9 @@
   color: #353740;
   font-family: "ColfaxAI", Helvetica, sans-serif;
 }
+.main .modificador{
+  display: none;
+}
 .main {
   display: flex;
   flex-direction: column;
@@ -28,7 +31,10 @@
   padding-top: 10px;
 }
 .main .icon {
-  width: 34px;
+  width: 50px;
+}
+.main .pixel {
+  width: 53px;
 }
 .main h3 {
   font-size: 32px;

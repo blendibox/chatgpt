@@ -15,6 +15,7 @@ export default async function (req, res) {
     return;
   }
 
+
   const image = req.body.image || '';
   if (image.trim().length === 0) {
     res.status(400).json({
@@ -26,11 +27,22 @@ export default async function (req, res) {
   }
 
 
+  const modificador = req.body.modificador || '';
+  if (modificador.trim().length === 0) {
+    res.status(400).json({
+      error: {
+        message: "IA: Clique em um dos efeitos antes de enviar...",
+      }
+    });
+    return;
+  }
+
+
 
  try {
 
     const completion = await openai.createImage({
-      prompt: generatePrompt(image),
+      prompt: generatePrompt(image, modificador),
       n: 4,
       size: "1024x1024",
     });
@@ -56,12 +68,9 @@ export default async function (req, res) {
 
 
 
-function generatePrompt(image) {
+function generatePrompt(image, modificador) {
 
-  return `  ${image} high resolution image render cgi Elegant beautifully rendered aesthetic expression of the Sublime by Android Jones,  Shepard Fairey, Josephine Wall, Carlo Crivelli, Scott Naismith, Sandra Chevrier, Giotto Di Bondone. high resolution, digital art, fantasy, highly intricate details. 
-  Perfect composition subtractive lighting, 
-cosmic, mystical, psychedelic vivid dark colors, neon glow; dark sci-fi concept art, intricate hyperdetailed; professional quality, epic, cinematic
-  hyperrealistic 16k Octane render wide angle design magazine photography, medieval masterwork, hyperdetailed matte painting :: perfect proportions
+  return `  ${image}    ${modificador} 
    `;
 }
 

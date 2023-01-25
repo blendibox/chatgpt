@@ -67,6 +67,7 @@ export default function Home() {
             value={chatInput}
             onChange={(e) => setChatInput(e.target.value)}
           />
+
           <input type="submit"  value={botaoEnviar || 'Enviar'} id="enviar" />
         </form>
         <div  className={styles.result}>
